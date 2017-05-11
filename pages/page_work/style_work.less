@@ -1,0 +1,91 @@
+@import "variables";
+
+@import "../../less/menu-nav";
+@import "../../less/animation";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: @wrapper-width;
+  margin: auto;
+  position: relative;
+  .site-header{
+    background: @var-url-0;
+    height: @header-height;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    .logo{
+      position: absolute;
+      top: 15px;
+      left: 48px;
+      animation: 5s rotate 2s infinite;
+    }
+  }
+  .site-content{
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    .work {
+      position: relative;
+      min-height: @header-height + 512px;
+      margin: 128px auto 7px auto;
+      .app-header {
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+        &__title-h2 {
+          margin: 0 auto;
+          font-family: @font-h;
+          font-size: @font-h-size;
+          text-transform: uppercase;
+          color: @h1-color;
+        }
+        &__title-h1 {
+          margin: 0 auto;
+          font-family: @font-h;
+          font-size: @font-h-size * 3.3825em;
+          text-transform: capitalize;
+          color: @h2-color;
+          padding-top: 5px;
+        }
+      }
+      &__description{
+        text-align: center;
+        line-height: 30px;
+        font-family: @font-work-descript;
+        font-size:@font-h-size * 1.3837em;
+        color: @font-work-descript-color;
+        margin: 57px 255px 0 262px;
+      }
+      &__images{
+        height: (@header-height + 512px) - 308px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+  }
+  .site-footer {
+    min-height: 93px;
+    display: flex;
+    background: @background-footer;
+    &__text {
+      font-family: @site-footer-text;
+      margin: 0;
+      font-size: 1em;
+      color: @color-text-footer;
+      &_right {
+        padding: 41px 148px 0 248px;
+      }
+      &_left {
+        padding-top: 41px;
+      }
+    }
+  }
+}

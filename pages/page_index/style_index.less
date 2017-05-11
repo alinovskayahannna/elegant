@@ -1,0 +1,126 @@
+@import "variables";
+@import "mixins";
+
+@import "../../less/menu-nav";
+@import "../../less/animation";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: @wrapper-width;
+  margin: auto;
+  position: relative;
+  .site-header {
+    display: flex;
+    min-height: @header-height;
+    background: @var-url-0 no-repeat;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 48px;
+      animation: 5s rotate 2s infinite;
+    }
+    .button {
+      background: none;
+      border: 2px solid #fdfdfd;
+      border-radius: 60%;
+      float: left;
+      height: 32px;
+      width: 32px;
+      margin: 612px auto 55px auto;
+      outline: none;
+      cursor: pointer;
+      &__tick:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border: solid #fdfdfd;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotateZ(45deg);
+        margin: 8px 10px;
+      }
+    }
+  }
+  .site-content{
+    display: flex;
+    min-height: @content-height;
+    max-width: inherit;
+    flex-direction: column;
+    .container{
+      min-height: @content-height - 451px;
+      width: 100%;
+      display: flex;
+      &__text{
+        .text;
+        text-align: center;
+        margin: auto 255px auto 258px;
+      }
+    }
+    .service {
+      min-height: @content-height - 574px;
+      display: flex;
+      background: lighten(@background-footer, 4.5%);
+      .block{
+        max-width: 640px;
+        min-height: inherit;
+      }
+      .text{
+        font-family:@service-text-font;
+        margin: 0;
+        color: #505d68;
+        line-height: 30px;
+        font-size: @service-text-size;
+      }
+      .block-services {
+        position: relative;
+        &__title {
+          font-family: @service-title-font;
+          font-size: @service-title-size;
+          position: absolute;
+          top: 48px;
+          left: 40px;
+        }
+        &__text {
+          position: absolute;
+          top: 172px;
+          left: 55px;
+          right: 292px;
+        }
+        .list {
+          padding: 0;
+          margin: 205px 0 0 365px;
+          &__item {
+            list-style: none;
+          }
+          &__item:before {
+            content: "-";
+            margin-right: 12px;
+          }
+        }
+      }
+
+    }
+  }
+  .site-footer {
+    min-height: 93px;
+    display: flex;
+    background: @background-footer;
+    &__text {
+      font-family: @site-footer-text;
+      margin: 0;
+      font-size: 1em;
+      color: @color-text-footer;
+      &_right {
+        padding: 41px 148px 0 248px;
+      }
+      &_left {
+        padding-top: 41px;
+      }
+    }
+  }
+}

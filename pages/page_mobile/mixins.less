@@ -1,0 +1,24 @@
+.text(@f-weight, @f-family, @f-size, @color, @text-transform:normal){
+  font-weight: @f-weight;
+  font-family: @f-family;
+  font-size: @f-size;
+  color:@color;
+  text-transform: @text-transform;
+}
+.btn(@width, @height, @color, @background-color){
+  width: @width;
+  height: @height;
+  border: 1px solid @color;
+  display: flex;
+  background: @background-color;
+  outline: none;
+  &_hover:hover{
+    background: darken(@button-color,10%);
+  }
+  &_focus:focus{
+    background: saturate(darken(@button-color, 10%),50%);
+  }
+}
+.text-btn(@size){
+  font-size: @size;
+}

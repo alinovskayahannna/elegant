@@ -1,0 +1,208 @@
+@import "vireables";
+@import "mixins";
+
+@import "menu-nav";
+@import "../../less/animation";
+
+.wrapper {
+  width: @wrapper-width;
+  height: @wrapper-height;
+  margin: 0 auto;
+  .site-header{
+    height: @wrapper-height - 14663px;
+    background: url("../../img/mobile/girl.png");
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    &__title{
+      font-weight: normal;
+      font-family: @header-title-font;
+      font-size: @header-title-font-size;
+      text-align: center;
+      color: #fff;
+      margin: 375px auto 0 auto;
+    }
+    .button {
+      background: none;
+      border: 3px solid #fdfdfd;
+      border-radius: 60%;
+      float: left;
+      height: 59px;
+      width: 63px;
+      margin: 45px auto 0 auto;
+      outline: none;
+      cursor: pointer;
+      &__tick:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: solid #fdfdfd;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotateZ(45deg);
+        margin: 13px 20px;
+      }
+    }
+  }
+  .site-content{
+    display: flex;
+    flex-direction: column;
+    height: @wrapper-height - 1565px;
+    width: inherit;
+    .btn{
+      .btn(454px, 110px, #505d68, #fff);
+      margin: 0 auto 162px auto;
+      &__text{
+        .text-btn(30px);
+        margin: auto;
+        text-transform: capitalize;
+        color: darken(#505d68, 15%);
+      }
+    }
+    .elegant-post{
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      &__title-small {
+        .text(normal, @small-title, @header-title-font-size - 67px, @color-small-title, uppercase);
+        margin: 142px auto 20px auto;
+      }
+      &__title-big{
+        .text(bold, @big-title, @header-title-font-size - 5px, @color-big-title, capitalize);
+        text-align: center;
+        line-height: 90px;
+        margin:0 auto 0 auto;
+      }
+      &__description{
+        .text(normal, @post-description,  @header-title-font-size - 66px, darken(@color-big-title, 25%));
+        text-align: center;
+        margin: 68px 38px 0 30px;
+      }
+      .btn {
+        .btn(452px, 109px, #000, #fff);
+        box-sizing: border-box;
+        margin: 70px auto 154px auto;
+        cursor: pointer;
+        &__text {
+          .text-btn(27px);
+          font-family: @font-button;
+          text-transform: capitalize;
+          margin: auto;
+          color: darken(@color-big-title, 25%);
+        }
+      }
+      &__imgs{
+        height: @post-imgs-height;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 143px 0 158px 0;
+      }
+      .team{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: @post-people-width;
+        height: @post-people-height;
+        margin: 130px auto 160px auto;
+        &__part{
+          height: 929px;
+          width: inherit;
+          background: lighten(@background-footer, 4.5%);
+        }
+        &__description{
+          width: 654px;
+          height: 277px;
+          margin: 30px 0 0 27px;
+        }
+        &__title-small{
+          .text(bolder, @team-title-small, 29px, @color-small-title, uppercase);
+          margin: 0 0 20px 0;
+        }
+        &__title-big{
+          .text(normal, @team-title-big, 40px, @color-big-title);
+          margin: 0 0 40px 0;
+        }
+        &__description-text{
+          .text(normal, @post-description,  @header-title-font-size - 66px, darken(@color-big-title, 25%));
+          margin: 0;
+        }
+      }
+      &__container{
+        width: 680px;
+        height: 1446px;
+        margin: 95px auto 79px auto;
+        background: lighten(@background-footer, 4.5%);
+      }
+      &__container-description{
+        width: 609px;
+        height: 738px;
+        margin: 77px 0 0 71px;
+        .elegant-post__title-small{
+          margin: 0;
+          color: #71777c;
+        }
+        .elegant-post__title-big{
+          .elegant-post__description;
+          font-family: @header-title-font;
+          font-size: 60px;
+          margin: 25px 0 75px 0;
+          line-height: 60px;
+        }
+        .elegant-post__description{
+          color: #71777c;
+          margin: 0 0 98px 0;
+          text-align: left;
+        }
+        .btn{
+          .btn(245px, 90px, #000, #f9f9f9);
+          margin: 10px 361px 0 0 ;
+          &__text{
+            .text-btn(29px);
+          }
+        }
+      }
+      &__contacts{
+        height: 1105px;
+        width: 680px;
+        background: lighten(@background-footer, 4.5%);
+        margin: 95px auto 153px auto;
+        &-container{
+          width: 658px;
+          height: 654px;
+          margin: 80px auto 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+          .elegant-post__contacts-info{
+            display: flex;
+            flex-direction: column;
+            width: 329px;
+            height: 272px;
+            .elegant-post__contacts-title{
+              .text(bolder, @big-title, 28px, #323d43, uppercase);
+              margin: 0 auto 70px auto;
+            }
+            .elegant-post__contacts-text{
+              .text(normal, @small-title, 30px, #818689);
+              margin: 0 auto;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  .site-footer{
+    height: @height-footer;
+    width: inherit;
+    background: @background-footer;
+    &__info{
+      .text(normal, @footer-info, 30px, #9da0a2);
+      line-height: 50px;
+      margin: 0;
+      padding: 70px 0  0 12px;
+    }
+  }
+}

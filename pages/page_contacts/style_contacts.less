@@ -1,0 +1,156 @@
+@import "variables";
+
+@import "../../less/menu-nav";
+@import "../../less/animation";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: @wrapper-width;
+  margin: auto;
+  position: relative;
+  .site-header{
+    background: @var-url-0;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    .logo{
+      position: absolute;
+      top: 15px;
+      left: 48px;
+      animation: 5s rotate 2s infinite;
+    }
+  }
+  .site-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 60.1562%; /* 770 / 1280 60%*/
+    min-height: 55.8897%; /* 892 / 1595 55%*/
+    margin: 125px auto 85px auto;
+    .app-header {
+      display: flex;
+      flex-direction: column;
+      height: 70px;
+      width: inherit;
+      &__title-h2 {
+        font-family: @font-h2;
+        font-size: @text-size;
+        text-transform: uppercase;
+      }
+      .gold {
+        color: @gold-color;
+      }
+      &__title-h1 {
+        font-family: @font-h1;
+        font-size: @text-size * 1, 5168em;
+        text-transform: capitalize;
+        padding-top: 20px;
+      }
+      .grey {
+        color: @h1;
+      }
+      .title {
+        margin: 0 auto;
+      }
+    }
+    .wrap{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      min-height: 67.2645%;
+      width: inherit;
+      margin-top: 83px;
+      .block {
+        height: @block-height;
+        position: relative;
+      }
+      .block-lisbon{
+        width: @s-block-width;
+        background: @background-block-lisbon;
+        &__line-element{
+          border: none;
+          width: 31px;
+          height: 3px;
+          background-color:@line-element-color;
+          position: absolute;
+          top: 33px;
+          left: 32px;
+        }
+        &__contact-info{
+          margin: 0;
+          font-size: 25px;
+          font-family: @contact-text;
+          color: @contact-text-color;
+          position: absolute;
+          top: 85px;
+          left: 32px;
+        }
+      }
+      .block-img{
+        width: @s-block-width + 162px;
+        background: @var-url-1;
+      }
+      .block-info{
+        .block-img;
+        overflow: hidden;
+        background:@background-block-info;
+        &__text{
+          font-family:@info-text;
+          font-size: @text-size * 1.5375em;
+          line-height: 30px;
+          font-weight: inherit;
+          margin: 0;
+          color:@info-text-color;
+          padding: 47px 50px 0 46px;
+        }
+      }
+      .block-tel{
+        width: @s-block-width;
+        background: @background-block-tel;
+      }
+      .btn{
+        width: 236px;
+        height: 54px;
+        margin: 78px auto;
+        border: 1px solid #000;
+        display: flex;
+        background: #fff;
+        &__text{
+          font-family: @font-button;
+          font-size: @font-sise-button;
+          margin: auto;
+          color:@button-text-color;
+        }
+        &_hover:hover{
+          background: darken(@button-color,10%);
+        }
+        &_focus:focus{
+          background: saturate(darken(@button-color, 10%),50%);
+          outline: none;
+          border-color: #FF7A55;
+        }
+      }
+    }
+  }
+  .site-footer {
+    min-height: 93px;
+    display: flex;
+    background: @background-footer;
+    &__text {
+      font-family: @site-footer-text;
+      margin: 0;
+      font-size: 1em;
+      color: @color-text-footer;
+      &_right {
+        padding: 41px 148px 0 248px;
+      }
+      &_left {
+        padding-top: 41px;
+      }
+    }
+  }
+}
+
+
